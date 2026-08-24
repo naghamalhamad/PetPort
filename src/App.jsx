@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppStateProvider } from './context/AppState';
 import PhoneFrame from './components/PhoneFrame';
 
@@ -27,7 +27,7 @@ import Settings from './screens/Settings';
 export default function App() {
   return (
     <AppStateProvider>
-      <BrowserRouter>
+      <HashRouter>
         <PhoneFrame>
           <Routes>
             <Route path="/" element={<Onboarding1 />} />
@@ -64,7 +64,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/home" replace />} />
           </Routes>
         </PhoneFrame>
-      </BrowserRouter>
+      </HashRouter>
     </AppStateProvider>
   );
 }
